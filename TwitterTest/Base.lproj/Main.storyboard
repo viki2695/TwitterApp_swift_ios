@@ -187,6 +187,50 @@
                                             <outlet property="txtPostText" destination="62N-31-GFz" id="0cd-sf-SUP"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellWithoutPost" rowHeight="144" id="O6u-NR-eV3" customClass="TVCPostWithoutImage" customModule="TwitterTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="197" width="375" height="144"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O6u-NR-eV3" id="dj6-a3-pGx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="143.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ltm-Fs-kCg">
+                                                    <rect key="frame" x="8" y="8" width="359" height="110"/>
+                                                    <subviews>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mZX-DB-f0u">
+                                                            <rect key="frame" x="8" y="0.0" width="343" height="102"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="102" id="6FE-c3-0Ac"/>
+                                                                <constraint firstAttribute="width" constant="343" id="88Q-wF-rQO"/>
+                                                            </constraints>
+                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="359" id="1uT-wF-Rbe"/>
+                                                        <constraint firstAttribute="bottom" secondItem="mZX-DB-f0u" secondAttribute="bottom" constant="8" id="DKk-fJ-V2w"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mZX-DB-f0u" secondAttribute="trailing" constant="8" id="Jf8-hi-NbA"/>
+                                                        <constraint firstItem="mZX-DB-f0u" firstAttribute="top" secondItem="Ltm-Fs-kCg" secondAttribute="top" id="QL8-EV-fgy"/>
+                                                        <constraint firstItem="mZX-DB-f0u" firstAttribute="leading" secondItem="Ltm-Fs-kCg" secondAttribute="leading" constant="8" id="gcM-a3-SMC"/>
+                                                        <constraint firstAttribute="height" constant="110" id="wQK-Uu-OXo"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ltm-Fs-kCg" firstAttribute="trailing" secondItem="dj6-a3-pGx" secondAttribute="trailingMargin" id="4Sf-UX-wKO"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ltm-Fs-kCg" secondAttribute="bottom" constant="17.5" id="B4K-4D-Jds"/>
+                                                <constraint firstItem="Ltm-Fs-kCg" firstAttribute="leading" secondItem="dj6-a3-pGx" secondAttribute="leadingMargin" id="Jjt-8r-Agu"/>
+                                                <constraint firstItem="Ltm-Fs-kCg" firstAttribute="top" secondItem="dj6-a3-pGx" secondAttribute="topMargin" id="t6u-5T-s0D"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="txtPostText" destination="mZX-DB-f0u" id="zGK-VP-re5"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
