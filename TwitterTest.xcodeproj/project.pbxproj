@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E40C48E2047AABE008BF958 /* TVCPostWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E40C48D2047AABE008BF958 /* TVCPostWithText.swift */; };
 		4E471AED2045CD290086DF37 /* VCPosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E471AEC2045CD290086DF37 /* VCPosting.swift */; };
 		4E5A659F2044EE0800D56030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A659E2044EE0800D56030 /* AppDelegate.swift */; };
 		4E5A65A12044EE0800D56030 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A65A02044EE0800D56030 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		42DA149AC07A944558FDFC2B /* Pods_TwitterTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		479EC0F96D31143397AEC3AF /* Pods-TwitterTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterTest/Pods-TwitterTest.debug.xcconfig"; sourceTree = "<group>"; };
+		4E40C48D2047AABE008BF958 /* TVCPostWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCPostWithText.swift; sourceTree = "<group>"; };
 		4E471AEC2045CD290086DF37 /* VCPosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPosting.swift; sourceTree = "<group>"; };
 		4E5A659B2044EE0800D56030 /* TwitterTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5A659E2044EE0800D56030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				4E5A659E2044EE0800D56030 /* AppDelegate.swift */,
 				4E5A65A02044EE0800D56030 /* ViewController.swift */,
 				4E5A65A22044EE0800D56030 /* Main.storyboard */,
+				4E40C48D2047AABE008BF958 /* TVCPostWithText.swift */,
 				4ED7CF042046F60D00F7758D /* TVCPostWithoutImage.swift */,
 				4E6C4670204640F40067AF2C /* Post.swift */,
 				4E6C466E2046401D0067AF2C /* TVCAddPost.swift */,
@@ -245,6 +248,7 @@
 				4E5A659F2044EE0800D56030 /* AppDelegate.swift in Sources */,
 				4E6C466F2046401D0067AF2C /* TVCAddPost.swift in Sources */,
 				4E6C4671204640F40067AF2C /* Post.swift in Sources */,
+				4E40C48E2047AABE008BF958 /* TVCPostWithText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

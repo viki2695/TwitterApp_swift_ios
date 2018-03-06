@@ -1,19 +1,19 @@
 //
-//  TVCPostWithoutImage.swift
+//  TVCPostWithText.swift
 //  TwitterTest
 //
-//  Created by vigneswaran on 28/02/18.
+//  Created by vigneswaran on 01/03/18.
 //  Copyright © 2018 vigneswaran. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class TVCPostWithoutImage: UITableViewCell {
+class TVCPostWithText: UITableViewCell {
 
-    
     @IBOutlet weak var txtPostText: UITextView!
-    @IBOutlet weak var iv_personImage: UIImageView!
+    @IBOutlet weak var iv_postImage: UIImageView!
+    @IBOutlet weak var ivPersonImage: UIImageView!
     @IBOutlet weak var txtPersonName: UILabel!
     @IBOutlet weak var txtPostDate: UILabel!
     
@@ -29,9 +29,24 @@ class TVCPostWithoutImage: UITableViewCell {
     }
     
     func setText(post:Post){
-        txtPostText.text = post.postText
+        txtPostText.text = post.postText!
         txtPostDate.text = post.postDate!
+        setImage(url: post.postImage!)
         loadPostFromFirebase(userUID:post.userUID!)
+    }
+    
+    func setImage(url:String){
+        let storageRef = Storage.storage().reference(forURL: "gs://learningapps-b68f9.appspot.com")   //creating reference for firebase storage
+        let postImageRef = storageRef.child(url)  //setting posts folder image with reference
+        postImageRef.getData(maxSize: 8 * 1024 * 1024){
+            data, error in
+            
+            if let error = error {
+                print("Cannot show post images due to error")
+            }else{
+                self.iv_postImage.image = UIImage(data: data!)
+            }
+        }
     }
     
     var ref = DatabaseReference.init()
@@ -70,9 +85,8 @@ class TVCPostWithoutImage: UITableViewCell {
             if let error = error {
                 print("Cannot show post images due to error")
             }else{
-                self.iv_personImage.image = UIImage(data: data!)
+                self.ivPersonImage.image = UIImage(data: data!)
             }
         }
     }
-
 }

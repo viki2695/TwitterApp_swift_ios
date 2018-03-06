@@ -46,10 +46,14 @@ class VCPosting: UIViewController,UITableViewDelegate,UITableViewDataSource {
             cellAdd.main = self
             
             return cellAdd
-        }else{
+        }else if(post.postImage == "No Image"){
             let cellWithoutImage = tableView.dequeueReusableCell(withIdentifier: "cellWithoutPost", for: indexPath) as! TVCPostWithoutImage
-            cellWithoutImage.setText(postText: post.postText!)
+            cellWithoutImage.setText(post: post)
             return cellWithoutImage
+        }else{
+            let cellWithImage = tableView.dequeueReusableCell(withIdentifier: "cellWithImage", for: indexPath) as! TVCPostWithText
+            cellWithImage.setText(post: post)
+            return cellWithImage
         }
     }
     
@@ -73,8 +77,8 @@ class VCPosting: UIViewController,UITableViewDelegate,UITableViewDataSource {
                             userUID = userUIDF
                         }
                         
-                        var postDate:String?
-                        if let postDateF = postDic["postDate"] as? String{
+                        var postDate:CLong?
+                        if let postDateF = postDic["postDate"] as? CLong{
                             postDate = postDateF
                         }
                         
@@ -82,12 +86,27 @@ class VCPosting: UIViewController,UITableViewDelegate,UITableViewDataSource {
                         if let postImageF = postDic["imagePath"] as? String{
                             postImage = postImageF
                         }
-                        self.listOfPodt.append(Post(postText:postText!,userUID:userUID!,postDate:"",postImage:postImage!))
+                        self.listOfPodt.append(Post(postText:postText!,userUID:userUID!,postDate: " \(postDate!)",postImage:postImage!))
                     }
                 }
                 self.tvListPodt.reloadData()
             }
         })
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let post = listOfPodt[indexPath.row]
+        
+        if(post.userUID == "@#$2@"){
+            
+            return 169
+        }else if(post.postImage == "No Image"){
+            
+            return 144
+        }else{
+            
+            return 231
+        }
     }
 
 }

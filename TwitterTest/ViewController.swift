@@ -24,6 +24,12 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         imagepicker = UIImagePickerController()
         imagepicker.delegate = self
         self.ref = Database.database().reference()
+        
+        if let user = Auth.auth().currentUser {
+            
+            self.userUID = user.uid
+            goToPosting()
+        }
     }
     
     @IBAction func buPickImage(_ sender: Any) {
@@ -101,7 +107,12 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     }
     
     func goToPosting(){
-        performSegue(withIdentifier: "ShowPost", sender: self.userUID)
+        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "ShowPost", sender: self.userUID)
+        }
+        dismiss(animated: true, completion: nil)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
